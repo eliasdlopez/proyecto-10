@@ -1,0 +1,222 @@
+
+$search-color: #333333;
+$nav-color: #171717;
+$body-text: Lora, serif;
+$button-color: rgba(255, 255, 255, 0.4);
+$tag-color: #E1CA57;
+
+img {
+    width: 100%;
+}
+
+nav {
+    font-family: Montserrat;
+    font-weight: regular;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    background-color: $nav-color;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+        li {
+            display: inline-block;
+            padding: 0px 20px;
+        }
+
+        .social-nav {
+            display: inline-block;
+
+            li {
+                padding: 0px 5px;
+                font-size: 15px;
+            }
+        }
+
+        .nav-items {
+            border-right: 1px solid grey;
+        }
+
+        span {
+            color: #f0c55c;
+        }
+}
+
+#demo-2 {
+    display: inline-block;
+
+        input {
+        border: solid 0px #ccc;
+        display: inline-block;
+        outline: none;
+        font-size: 100%;
+
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s;
+
+        background: $search-color url(../img/img_search.png) no-repeat 13px center;
+        width: 50px;
+        height: 50px;
+        }
+
+        input:focus {
+            width: 150px;
+            background: lighten($search-color, 20%);
+        }
+
+}
+
+.logo {
+    margin: auto;
+    width: 30%;
+    display: block;
+    margin-top: 50px;
+}
+
+.main-articles {
+
+    display: flex;
+    width: 100%;
+    padding-top: 50px;
+    position: relative;
+
+    .article-nav {
+        font-size: 20px;
+        color: $button-color;
+        border: solid 1px $button-color;
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        position: absolute;
+        display: inline-block;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+        text-decoration: none;
+    }
+
+    .article-nav:hover {
+        color: opacify($button-color, 0.5);
+        border: solid 1px opacify($button-color, 0.5);
+    }
+
+    .ion-chevron-left {
+        left: 10px;
+        bottom: 200px;
+    }
+
+    .ion-chevron-right {
+        right: 10px;
+        bottom: 200px;
+    }
+
+    article {
+        display: inline-block;
+        width: 1/3;
+        position: relative;
+
+        .article-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 70px;
+            position: absolute;
+            bottom: 0px;
+            box-sizing: border-box;
+            padding: 17px 20px;
+
+            .tag {
+                background-color: $tag-color;
+                padding: 1px 3px;
+                border-radius: 3px;
+                border: none; 
+            }
+        }
+    }
+}
+
+.tag {
+text-transform: uppercase;
+font-family: Montserrat;
+font-weight: 400;
+font-size: 12px;
+margin-left: 5px;
+color: white;
+}
+
+h3 {
+    font-family: $body-text;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.date {
+    @extend h3;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* BLOG SECTION */
+
+.blog {
+
+    width: 50%;
+    margin: 10px 200px;
+
+    .blog-post {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+        font-family: Raleway, sans-serif;
+        text-transform: uppercase;
+        color: #222423;
+        font-size: 30px;
+        padding: 20px 0;
+        letter-spacing: 2px;
+        }
+
+        .ribbon-tag { 
+            background: $tag-color;
+            position: relative;
+            height: 24px;
+            width: 80px;
+            margin: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+
+        .ribbon-tag:before, .ribbon-tag:after {
+            content: '';
+            position: absolute;
+            height:0;
+            border: 12px solid transparent;
+            top: 0;
+            width: 0;
+            border-top-color: $tag-color;
+            border-bottom-color: $tag-color;
+            z-index: -1;
+        }
+
+        .ribbon-tag:before {
+            left: -12px;
+        }
+
+        .ribbon-tag:after {
+            right: -12px;
+        }
+
+    }
+}
+
